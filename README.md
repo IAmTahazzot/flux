@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="./docs/brand.png" alt="brand image">
+<img src="./docs/brand-border.png" alt="brand image">
 
 # Flux
 
