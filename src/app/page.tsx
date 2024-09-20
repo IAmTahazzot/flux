@@ -1,5 +1,6 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
+import { SignOutButton } from '@clerk/nextjs';
 
 const Home = () => {
   return (
@@ -14,7 +15,12 @@ const Home = () => {
           <p>I'll always be there by your side.</p>
           <br />
 
-          <Button>I'm here</Button>
+          <div className="flex gap-4">
+            <Button>I'm here</Button>
+            <Button variant="outline" asChild>
+              <SignOutButton>Log out</SignOutButton>
+            </Button>
+          </div>
         </CardContent>
       </Card>
     </div>

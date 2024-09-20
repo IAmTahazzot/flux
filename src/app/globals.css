@@ -44,3 +44,23 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+/*
+ |--------------------------------------------------------------------
+ | Removing clerk ads
+ |--------------------------------------------------------------------
+ | Clerk authentication tool.
+ |
+ | removing some ads from sign-in and sign-up page.
+ **/
+.cl-internal-1dauvpw {
+  display: none;
+}
+
+.cl-footer, .cl-card {
+  background: none;
+}
+
+.cl-cardBox {
+  box-shadow: none;
+}
