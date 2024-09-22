@@ -2,11 +2,11 @@ import React from 'react';
 
 import type { Metadata } from 'next';
 import { ClerkProvider } from '@clerk/nextjs';
-import { dark } from '@clerk/themes';
 
 import './globals.css';
 import { Inter, Kodchasan, KoHo } from 'next/font/google';
 import { cn } from '@/lib/utils';
+import { ThemeProvider } from '@/components/providers/ThemeProvider';
 
 const kodchasanFont = Kodchasan({
   weight: ['400', '600'],
@@ -33,17 +33,19 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode; }>) {
   return (
-    <html lang="en">
-    <ClerkProvider appearance={{
-      baseTheme: dark
-    }}>
-      <body className={cn(
-        kodchasanFont.variable,
-        kohoFont.variable,
-        interFont.variable,
-        interFont.className
-      )}> {children} </body>
-    </ClerkProvider>
+    <html lang="en" suppressHydrationWarning>
+    <body className={cn(
+      kodchasanFont.variable,
+      kohoFont.variable,
+      interFont.variable,
+      interFont.className
+    )}>
+    <ThemeProvider defaultTheme="system" attribute="class" enableSystem>
+      <ClerkProvider>
+        {children}
+      </ClerkProvider>
+    </ThemeProvider>
+    </body>
     </html>
   );
 }
