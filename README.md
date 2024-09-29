@@ -5,7 +5,7 @@
 # Flux
 
 ![Stars](https://img.shields.io/github/stars/iamtahazzot/flux)
-![License](https://img.shields.io/github/license/iamtahazzot/flux)
+![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)
 
 </div>
 
