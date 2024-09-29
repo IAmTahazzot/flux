@@ -48,7 +48,7 @@ export default function RootLayout({
             interFont.className
           )}
         >
-          <ThemeProvider defaultTheme="dark" attribute="class" enableSystem>
+          <ThemeProvider defaultTheme="system" attribute="class" enableSystem>
             {children}
           </ThemeProvider>
         </body>
