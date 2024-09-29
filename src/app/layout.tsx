@@ -11,41 +11,48 @@ import { ThemeProvider } from '@/components/providers/ThemeProvider';
 const kodchasanFont = Kodchasan({
   weight: ['400', '600'],
   subsets: ['latin'],
-  variable: '--font-kodchasan'
+  variable: '--font-kodchasan',
 });
 
 const interFont = Inter({
   weight: ['400', '500', '600', '700'],
   subsets: ['latin'],
-  variable: '--font-inter'
+  variable: '--font-inter',
 });
 
 const kohoFont = KoHo({
   weight: ['400', '500', '600', '700'],
   subsets: ['latin'],
-  variable: '--font-koho'
+  variable: '--font-koho',
 });
 
 export const metadata: Metadata = {
   title: 'Flux',
-  description: 'Flux: Finance manager for the future'
+  description: 'Flux: Finance manager for the future',
 };
 
-export default function RootLayout({ children }: Readonly<{ children: React.ReactNode; }>) {
+export default function RootLayout({
+  children,
+}: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
-    <body className={cn(
-      kodchasanFont.variable,
-      kohoFont.variable,
-      interFont.variable,
-      interFont.className
-    )}>
-    <ThemeProvider defaultTheme="system" attribute="class" enableSystem>
-      <ClerkProvider>
-        {children}
-      </ClerkProvider>
-    </ThemeProvider>
-    </body>
-    </html>
+    <ClerkProvider>
+      <html lang="en" suppressHydrationWarning>
+        <head>
+          <link rel="icon" href="./favicon.png" sizes="any" />
+        </head>
+        <body
+          className={cn(
+            kodchasanFont.variable,
+            kohoFont.variable,
+            interFont.variable,
+            interFont.className
+          )}
+        >
+          <ThemeProvider defaultTheme="dark" attribute="class" enableSystem>
+            {children}
+          </ThemeProvider>
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }
