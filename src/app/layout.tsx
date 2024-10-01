@@ -7,6 +7,7 @@ import './globals.css';
 import { Inter, Kodchasan, KoHo } from 'next/font/google';
 import { cn } from '@/lib/utils';
 import { ThemeProvider } from '@/components/providers/ThemeProvider';
+import { QueryProviders } from '@/providers/query-provider';
 
 const kodchasanFont = Kodchasan({
   weight: ['400', '600'],
@@ -49,7 +50,7 @@ export default function RootLayout({
           )}
         >
           <ThemeProvider defaultTheme="system" attribute="class" enableSystem>
-            {children}
+            <QueryProviders>{children}</QueryProviders>
           </ThemeProvider>
         </body>
       </html>
