@@ -8,6 +8,7 @@ import { Inter, Kodchasan, KoHo } from 'next/font/google';
 import { cn } from '@/lib/utils';
 import { ThemeProvider } from '@/components/providers/ThemeProvider';
 import { QueryProviders } from '@/providers/query-provider';
+import { SheetProvider } from '@/providers/sheet-provider';
 
 const kodchasanFont = Kodchasan({
   weight: ['400', '600'],
@@ -46,12 +47,16 @@ export default function RootLayout({
             kodchasanFont.variable,
             kohoFont.variable,
             interFont.variable,
-            interFont.className
+            interFont.className,
           )}
         >
-          <ThemeProvider defaultTheme="system" attribute="class" enableSystem>
-            <QueryProviders>{children}</QueryProviders>
-          </ThemeProvider>
+          <div className="grid grid-cols-12 gap-4 h-full">
+            <ThemeProvider defaultTheme="system" attribute="class" enableSystem>
+              <SheetProvider>
+                <QueryProviders>{children}</QueryProviders>
+              </SheetProvider>
+            </ThemeProvider>
+          </div>
         </body>
       </html>
     </ClerkProvider>

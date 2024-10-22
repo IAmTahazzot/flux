@@ -4,11 +4,10 @@
 
 html,
 body {
-  height: 100%
+  height: 100%;
 }
 
 @layer base {
-
   :root {
     --background: 0 0% 100%;
     --foreground: 0 0% 3.9%;
@@ -36,10 +35,10 @@ body {
     --chart-3: 197 37% 24%;
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
-    --radius: 0.5rem
+    --radius: 0.5rem;
   }
 
-   .dark {
+  .dark {
     --background: 240 45% 4%;
     --foreground: 0 0% 98%;
     --primary: 0 0% 100%;
@@ -62,7 +61,7 @@ body {
     --chart-3: 30 80% 55%;
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
-    --radius: 0.5rem
+    --radius: 0.5rem;
   }
 }
 
@@ -88,11 +87,29 @@ body {
   display: none;
 }
 
-.cl-footer, .cl-card {
+.cl-footer,
+.cl-card {
   background: none;
   box-shadow: none;
 }
 
 .cl-cardBox {
   box-shadow: none;
+}
+
+.cl-navbar {
+  background: none;
+}
+
+.cl-internal-c2xpfh {
+  box-shadow: none;
+  border: 1px solid #eee;
+}
+
+.cl-internal-17dpwu0 {
+  @apply w-full overflow-auto
+}
+
+.cl-rootBox {
+  @apply col-span-12 w-auto;
 }
