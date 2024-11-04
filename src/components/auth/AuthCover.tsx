@@ -1,6 +1,6 @@
 export const AuthCover = () => {
   return (
-    <div className="bg-neutral-100 dark:bg-tertiary p-4 flex flex-col justify-between border-r dark:border-r-neutral-900">
+    <div className="bg-neutral-100 dark:bg-tertiary p-4 flex-col justify-between border-r dark:border-r-neutral-900 hidden lg:flex">
       <nav className="space-y-4">
         <div className="flex items-center gap-2">
           <div>

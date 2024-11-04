@@ -9,7 +9,7 @@ const SignUpPage = () => {
   const { isDark } = useTheme();
 
   return (
-    <div className="grid grid-cols-[1fr_2fr] lg:grid-cols-[400px_2fr] gap-10 h-full">
+    <div className="col-span-12 h-screen grid grid-cols-1 justify-items-center lg:justify-items-start lg:grid-cols-[1fr_2fr] gap-10 row-span-3">
       <AuthCover />
       <div className="grid items-center">
         <SignUp

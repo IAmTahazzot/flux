@@ -9,6 +9,7 @@ import { cn } from '@/lib/utils';
 import { ThemeProvider } from '@/components/providers/ThemeProvider';
 import { QueryProviders } from '@/providers/query-provider';
 import { SheetProvider } from '@/providers/sheet-provider';
+import { Toaster } from '@/components/ui/sonner';
 
 const kodchasanFont = Kodchasan({
   weight: ['400', '600'],
@@ -50,13 +51,20 @@ export default function RootLayout({
             interFont.className,
           )}
         >
-          <div className="grid grid-cols-12 gap-4 h-full">
-            <ThemeProvider defaultTheme="system" attribute="class" enableSystem>
-              <SheetProvider>
-                <QueryProviders>{children}</QueryProviders>
-              </SheetProvider>
-            </ThemeProvider>
-          </div>
+          <QueryProviders>
+            <div className="grid grid-cols-12 grid-rows-[80px] gap-4 h-full content-start">
+              <ThemeProvider
+                defaultTheme="system"
+                attribute="class"
+                enableSystem
+              >
+                <SheetProvider>
+                  {children}
+                  <Toaster />
+                </SheetProvider>
+              </ThemeProvider>
+            </div>
+          </QueryProviders>
         </body>
       </html>
     </ClerkProvider>

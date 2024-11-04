@@ -23,16 +23,16 @@ export const Header = () => {
   const path = usePathname();
   const isDashboard = path === '/';
 
-  if (isLoaded && !isSignedIn) {
-    redirect('/sign-in');
-  }
+  // if (isLoaded && !isSignedIn) {
+  //   redirect('/sign-in');
+  // }
 
   return (
     <>
-      <header className="col-span-12 grid grid-cols-12 items-center h-20 px-4 bg-white">
+      <header className="col-span-12 grid grid-cols-12 items-center h-full px-4 bg-white">
         <div className="col-span-6 flex items-center gap-2">
           <Link href="/" className="flex items-center gap-2">
-            <Image src={brand} alt="Flux brand" height={32} width={32} />
+            <Image src={brand} alt="Flux brand" height={28} width={28} />
             <h1 className="text-2xl font-bold font-koho">Flux</h1>
           </Link>
 
@@ -94,11 +94,7 @@ export const Header = () => {
                           New Window
                         </MenubarItem>
                         <MenubarSeparator />
-                        <SignOutButton
-                          signOutOptions={{
-                            redirectUrl: '/sign-in',
-                          }}
-                        >
+                        <SignOutButton>
                           <MenubarItem className="px-4 py-[10px]">
                             Sign Out
                           </MenubarItem>
@@ -108,7 +104,9 @@ export const Header = () => {
                   </Menubar>
                 )
               ) : (
-                <div>Loading...</div>
+                <>
+                  <div className="w-8 h-8 rounded-full animate-pulse bg-gray-100"></div>
+                </>
               )}
             </div>
           </div>
